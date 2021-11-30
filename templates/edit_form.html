@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Edit Pet for Adoption Form
+{% endblock title %}
+
+{% block content %}
+
+<h1>{{ pet.name }}</h1>
+
+{% if pet.image_url() %}
+<img class="img-fluid img-thumbnail m-2" style="max-width:400px;" src="{{ pet.image_url() }}">
+{% endif %}
+
+<h2>Update Pet Info</h2>
+
+<form method="POST">
+  {% include "forms.html" %}
+  <button class="btn btn-success mt-2" type="submit">Update</button>
+</form>
+
+{% endblock %}
